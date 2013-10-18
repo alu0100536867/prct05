@@ -7,7 +7,9 @@ class Fraccion
         attr_reader :num,:den
 
         def initialize(n,d)
-                @num,@den=n,d
+                mcd = gcd(n,d)
+                @num = n/mcd
+                @den = d/mcd
         end
 
 
@@ -50,3 +52,12 @@ class Fraccion
                 return divi.to_s
         end
 end
+
+
+m=Fraccion.new(3,4)
+puts "X= #{m.to_s}"
+puts "Y= 7/3"
+puts "suma #{m.suma(7,3)}"
+puts "resta #{m.resta(7,3)}"
+puts "producto #{m.producto(7,3)}"
+puts "division #{m.division(7,3)}"
